@@ -1,0 +1,8 @@
+{
+  "appName": "apex-viewer",
+  "contact": "<TBD>",
+  "team": "<TBD>",
+  "replicas": {
+    "prod": 1
+  }
+}

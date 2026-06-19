@@ -1,0 +1,50 @@
+# Git
+.git
+**/.git
+.gitignore
+.gitmodules
+
+# Python caches / artifacts
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+build/
+dist/
+
+# Extracted puzzle data — rebuilt from data.zip during the image build, so don't
+# ship the loose dir in the build context (keeps it small). data.zip itself is
+# kept (it's the source the Dockerfile unzips).
+data/
+
+# Workflow-viewer corpus (117MB jsonl / 13MB zip) — provided at runtime, not baked.
+all_workflows.jsonl
+all_workflows.zip
+
+# Run outputs / logs (created at runtime; keep context + image small)
+apex_outputs/
+apex_logs/
+logs/
+wandb/
+
+# Secrets / local config — provide at runtime via -e / -v
+config2.yaml
+.env
+.env.*
+
+# Test / tooling caches
+.pytest_cache/
+**/.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.log
+
+# Editors / IDE
+.vscode/
+.idea/
+
+# Node (future Vite/React UI — built separately, not from this context yet)
+node_modules/
+**/node_modules/

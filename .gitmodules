@@ -1,0 +1,3 @@
+[submodule "thirdparty/enigmata"]
+	path = thirdparty/enigmata
+	url = https://github.com/BytedTsinghua-SIA/Enigmata.git

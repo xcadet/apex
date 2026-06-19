@@ -1,0 +1,54 @@
+:root {
+  /* Ai2 palette: pink #F45096, cream #FAF2E9, teal #12566B */
+  --bg: #faf2e9; /* Ai2 cream */
+  --panel: #ffffff;
+  --text: #1f3a42; /* dark teal-gray body text */
+  --text-h: #12566b; /* Ai2 teal — headings/brand */
+  --muted: #6f7d82; /* muted teal-gray */
+  --border: #e9e0d1; /* warm border on cream */
+  --border-strong: #d8ccb8;
+  --accent: #f45096; /* Ai2 pink */
+  --accent-soft: #fde4ef; /* light pink tint */
+  --accent-border: rgba(244, 80, 150, 0.55);
+  --selected: #fbdcea; /* selected row */
+  --hover: #f5eee2; /* warm hover */
+  --teal: #12566b; /* Ai2 teal accent */
+  --shadow: 0 1px 2px rgba(18, 86, 107, 0.06), 0 8px 24px rgba(18, 86, 107, 0.08);
+
+  --sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+code {
+  font-family: var(--mono);
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-weight: 600;
+}

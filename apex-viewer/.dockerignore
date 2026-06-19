@@ -1,0 +1,10 @@
+node_modules
+dist
+*.log
+.git
+.DS_Store
+
+# Data is generated/served at runtime from a mounted JSONL — never bake it in.
+public/data
+all_workflows.jsonl
+all_workflows.zip

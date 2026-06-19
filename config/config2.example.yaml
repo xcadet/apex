@@ -1,0 +1,11 @@
+models:
+ "<model_name>": # model: "gpt-4-turbo"  # or gpt-3.5-turbo
+   api_type: "openai"  # or azure / ollama / groq etc.
+   base_url: "<your base url>"
+   api_key: "<your api key>" # $OPENAI_API_KEY
+   temperature: 0 # Will get bypassed by the temperature set in the search.py script
+ "<model_name>":
+   api_type: "openai"
+   base_url: "<your base url>"
+   api_key: "<your api key>"
+   temperature: 0

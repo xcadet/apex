@@ -1,0 +1,26 @@
+{
+    "Sequential": {
+        "description": "Linear pipeline: each step receives the previous step's output as context. Clamped to max 5 rounds.",
+        "interface": "Sequential(llm, num_rounds=1, prompts=List[str]). Call: sequential(problem: str) -> dict with key 'response' of type str"
+    },
+    "Star": {
+        "description": "Parallel fan-out to multiple isolated workers, then aggregation. Workers do not see each other's output. Clamped to max 10 agents.",
+        "interface": "Star(worker_llm, aggregator_llm, num_agents, worker_prompts=List[str], aggregator_prompt=str). Call: star(problem: str) -> dict with key 'response' of type str"
+    },
+    "SharedMemory": {
+        "description": "Agents write sequentially to a shared document, each reading the current state before contributing. Final aggregator reads the complete document. Clamped to max 10 agents, max 5 rounds.",
+        "interface": "SharedMemory(worker_llm, aggregator_llm, num_agents, num_rounds=1, worker_prompts=List[str], aggregator_prompt=str). Call: shared_memory(problem: str) -> dict with key 'response' of type str"
+    },
+    "Debate": {
+        "description": "All-to-all debate: each agent sees all other agents' proposals before revising. A final aggregator produces the answer. Clamped to max 10 agents, max 5 rounds.",
+        "interface": "Debate(worker_llm, aggregator_llm, num_agents, worker_prompts=List[str], aggregator_prompt=str, n_rounds=2). Call: debate(problem: str) -> dict with key 'response' of type str"
+    },
+    "StarWithCoordinator": {
+        "description": "Iterative hub-and-spoke: coordinator broadcasts a directive, workers respond in parallel, coordinator reads all responses and revises. Clamped to max 10 agents, max 5 rounds.",
+        "interface": "StarWithCoordinator(worker_llm, coordinator_llm, worker_prompts=List[str], coordinator_prompt=str, n_rounds=2). Call: star_with_coordinator(problem: str) -> dict with key 'response' of type str"
+    },
+    "DebateWithModerator": {
+        "description": "Moderated all-to-all debate: moderator injects summary/challenge after each round. Agents receive both peer proposals and moderator intervention. Clamped to max 10 agents, max 5 rounds.",
+        "interface": "DebateWithModerator(worker_llm, moderator_llm, agent_prompts=List[str], moderator_prompt=str, n_rounds=2). Call: debate_with_moderator(problem: str) -> dict with key 'response' of type str"
+    }
+}

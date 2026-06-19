@@ -1,0 +1,12 @@
+# Used when building with `-f apex-viewer/Dockerfile .` (context = repo root).
+# BuildKit prefers this over the repo-root .dockerignore for this Dockerfile.
+# Whitelist only what the viewer build needs: apex-viewer/ source + the corpus zip.
+*
+!apex-viewer
+!all_workflows.zip
+
+# Heavy / generated bits inside apex-viewer that the build recreates.
+apex-viewer/node_modules
+apex-viewer/dist
+apex-viewer/public/data
+**/.DS_Store
