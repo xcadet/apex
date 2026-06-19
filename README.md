@@ -78,8 +78,18 @@ unzip all_workflows.zip
 ```shell
 cd apex-viewer
 npm install
+npm run export
+npm run dev
+```
+
+The following prepare the data
+```shell
 npm run export      # all_workflows.jsonl -> public/data/  (auto-finds ../all_workflows.jsonl)
-npm run dev         # http://localhost:5173
+```
+
+The following starts the viewer on http://localhost:5173
+```shell
+npm run dev
 ```
 
 **Serve it in a container** (nginx on port 8080). The data is baked into the image at build time from `all_workflows.zip`, so the image is **self-contained — it runs with no flags or volumes** (which is what Skiff needs). Build from the repo root so the corpus zip is in the build context:
